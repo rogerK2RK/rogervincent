@@ -1,0 +1,33 @@
+ .box-all-series {
+    margin: 2% 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30;
+}
+
+.title {
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.box-serie {
+    margin-bottom: 40px;
+    width: 200px;
+}
+
+.title-series {
+    font-size: 1em;
+    font-weight: 700;
+    color: #000;
+    overflow-wrap: break-word;
+    min-height: 40px;
+}
+
+.box-serie-img {
+    width: 200px; 
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+}
