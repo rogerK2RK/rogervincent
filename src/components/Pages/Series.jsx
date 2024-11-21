@@ -45,7 +45,6 @@ export  function Series() {
                         <img className="box-serie-img"
                             src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
                             alt={serie.name}
-                            style={{ width: "200px", borderRadius: "8px" }}
                         />
                         <div className="box-serie-content">
                             <h2 className="title-series">{serie.name}</h2>
