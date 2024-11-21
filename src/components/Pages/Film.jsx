@@ -14,7 +14,7 @@ export function Film() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchSerie = async () => {
