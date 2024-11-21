@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import './Series.css'
+import './ListesPages.css'
 
 const API_KEY = "065b298d1d4d73b7f9b69fd2f3eb974d";
 
