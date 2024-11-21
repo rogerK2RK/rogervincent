@@ -6,13 +6,18 @@ import { Navbar } from "./components/Navbar/Navbar";
 import { Series } from "./components/Pages/Series";
 import { Serie } from "./components/Pages/Serie";
 import { Films } from "./components/Pages/Films";
+
 import { store } from "./app/store"
+
+
+import { Film } from "./components/Pages/Film";
 
 
 function App() {
   return (
   <Provider store={store}>
     <BrowserRouter>
+
       <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,6 +29,7 @@ function App() {
     </BrowserRouter>
   </Provider>
     
+
   )
 }
 
