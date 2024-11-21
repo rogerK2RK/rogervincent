@@ -1,0 +1,45 @@
+.box-series {
+    margin: 2% 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1;
+}
+
+h1 {
+    width: 100%;
+}
+
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+
+.serie-img {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 700px;
+    width: 500px;
+    object-fit: cover;
+}
+
+.box-content {
+    font-size: 20px;
+    text-align: justify;
+    width: 50%;
+}
+
+.box-image {
+    width: 40%;
+}
+
+.title {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.txt-bld {
+    font-weight: bold;
+}
