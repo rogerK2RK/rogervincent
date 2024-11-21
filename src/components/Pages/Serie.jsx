@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import './Serie.css'
+import { setInitialVotes } from "../../features/counter/counterSlice";
+import { Counter } from "./Counter"
+import './ContentesPages.css'
 
 const API_KEY = "e814a776b659687282d7e7d257401a67";
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -11,6 +14,8 @@ export function Serie() {
     const [serie, setSerie] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchSerie = async () => {
@@ -23,6 +28,8 @@ export function Serie() {
                 });
                 setSerie(response.data);
                 setLoading(false);
+
+                dispatch(setInitialVotes(response.data.vote_count));
             } catch (err) {
                 console.error("Erreur lors du chargement des détails de la série :", err);
                 setError("Impossible de charger les informations de la série.");
@@ -31,7 +38,7 @@ export function Serie() {
         };
 
         fetchSerie();
-    }, [id]);
+    }, [id, dispatch]);
 
     console.log(serie);
 
@@ -53,6 +60,7 @@ export function Serie() {
                 <p><span className="txt-bld">Langue : </span>{serie.languages.map((language) => (<span>{language} {serie.languages.length>1 ? "," : ""} </span>))}</p>
                 <p><span className="txt-bld">Genre : </span>{serie.genres.map((genre) => (<span>{genre.name}{serie.languages.length>1 ? "" : ","} </span>))}</p>
                 <p><span className="txt-bld">Nomre de Vote : </span>{serie.vote_count}</p>
+                <Counter />
             </div>
         </div>
     )
