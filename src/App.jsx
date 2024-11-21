@@ -24,6 +24,7 @@ function App() {
           <Route path="/series" element={<Series />} />
           <Route path="/serie/:id" element={<Serie />} />
           <Route path="/films" element={<Films />} />
+          <Route path="/film/:id" element={<Film />} />
           <Route path="/*" element={<Error />} />
         </Routes>
     </BrowserRouter>
