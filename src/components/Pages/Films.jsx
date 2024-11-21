@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import './ListesPages.css'
 
 const API_KEY = "065b298d1d4d73b7f9b69fd2f3eb974d";
 
@@ -42,10 +41,10 @@ export  function Films() {
                     <Link to={`/film/${movie.id}`} className="box-serie" key={movie.id}>
                         <img className="box-serie-img"
                             src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                            alt={movie.name}
+                            alt={movie.title}
                         />
                         <div className="box-serie-content">
-                            <h2 className="title-series">{movie.name}</h2>
+                            <h2 className="title-series">{movie.title}</h2>
                             <p>Note : {movie.vote_average}/10</p>
                             <p>Nombre de Vote : {movie.vote_count}</p>
                         </div>

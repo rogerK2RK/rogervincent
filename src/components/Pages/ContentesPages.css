@@ -43,3 +43,8 @@ h1 {
 .txt-bld {
     font-weight: bold;
 }
+
+.error{
+    display: flex;
+    justify-content: center;
+}
