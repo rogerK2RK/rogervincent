@@ -3,6 +3,7 @@ import { Home } from "./components/Pages/Home";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Series } from "./components/Pages/Series";
 import { Films } from "./components/Pages/Films";
+import { MovieInfo } from "./components/Movie/MovieInfo";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/series" element={<Series />} />
                 <Route path="/films" element={<Films />} />
+                <Route path="/movie_info/:id" Component={ MovieInfo } />
             </Routes>
         </BrowserRouter>
   )

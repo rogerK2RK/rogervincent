@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export function MovieDataFetcher() {
   const [data, setData] = useState([]);
@@ -10,7 +11,7 @@ export function MovieDataFetcher() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=${API_KEY}`);
+        const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?language=fr&api_key=${API_KEY}`);
         setData(response.data.results);
         setLoading(false);
       } catch (err) {
@@ -27,16 +28,13 @@ export function MovieDataFetcher() {
   }
 
   return (
-    <div>
-      <h1>Liste des Films :</h1>
-      <ul>
+    <>
         {data.map((movie) => (
-          <div key={movie.id}>
-            <h3>{movie.title}</h3>
+          <Link key={movie.id} to={`/movie_info/${movie.id}`}>
+            <h2>{movie.title} {movie.id}</h2>
             <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} />
-          </div>
+          </Link>
         ))}
-      </ul>
-    </div>
+    </>
   );
 }
