@@ -5,13 +5,12 @@ export function MovieDataFetcher() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const query = "Lord of the ring";
   const API_KEY = "065b298d1d4d73b7f9b69fd2f3eb974d";
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`);
+        const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=${API_KEY}`);
         setData(response.data.results);
         setLoading(false);
       } catch (err) {
