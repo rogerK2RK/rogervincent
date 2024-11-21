@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 // import './Series.css'
@@ -10,7 +10,7 @@ export  function Films() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchSeries = async () => {
+        const fetchMovies = async () => {
             try {
                 const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/day`, {
                     params: {
@@ -27,7 +27,7 @@ export  function Films() {
             }
         };
 
-        fetchSeries();
+        fetchMovies();
     }, []);
 
     if (loading) {
@@ -36,10 +36,10 @@ export  function Films() {
 
     return (
         <div>
-            <h1 className="title">Séries Populaires</h1>
+            <h1 className="title">List de Films Populaires :</h1>
             <div className="box-all-series">
                 {movies.map((movie) => (
-                    <Link to={`/movie/${movie.id}`} className="box-serie" key={movie.id}>
+                    <Link to={`/film/${movie.id}`} className="box-serie" key={movie.id}>
                         <img className="box-serie-img"
                             src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                             alt={movie.name}
